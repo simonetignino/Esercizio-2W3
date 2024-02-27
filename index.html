@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            /* color: black; */
+        }
+
+        .container {
+            width: 100%;
+            /* border: 2px solid black ; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+        }
+
+        .article-container {
+            /* border: 1px solid grey ; */
+            width: 300px;
+            height: 400px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 1px 5px 10px grey;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+
+        .article-img {
+            width: auto;
+            height: 180px;
+            display: flex;
+            /* border: 2px solid black; */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+        }
+
+        .article-icon {
+            width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .alink {
+            text-decoration: none;
+
+        }
+
+        .article-title {
+            margin-top: 20px;
+        }
+
+        .article-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 15px;
+        }
+
+        .article-price {
+            display: flex;
+            align-items: flex-end;
+            justify-content: start;
+            height: 20%;
+            font-size: 26px;
+            font-weight: 600;
+            align-items: end;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 150px;
+            background-color: rgb(193, 192, 192);
+            height: 100px;
+        }
+
+        .shop-address {
+            margin-top: 10px;
+        }
+
+        .commenti {
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            white-space: wrap;
+        }
+
+        .lascia-un-commento {
+            text-align: center;
+        }
+
+        .comment {
+            height: 300px;
+            width: 500px;
+            margin: 20px;
+        }
+        
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .icon {
+            /* border: 2px solid black;  */
+            font-size: 22px;
+            margin: 0 10px;
+            padding: 5px;
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 10px;
+        }
+
+        .icon:hover {
+            cursor: pointer;
+        }
+
+        .hide-show{
+            display: none;
+        }
+        a {
+            color: black;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-color">
+    <nav>
+        <div class="titolo">
+            <h1 id="title">E-commerce</h1>
+        </div>
+        <div class="buttons">
+            <button onclick="cambiaH1()" class="icon">
+                <i class="fa-solid fa-heading"></i>
+            </button>
+            <button onclick="cambiaBackground()" class="icon">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+            <button onclick="changeAddress()" class="icon">
+                <i class="fa-solid fa-location-dot"></i>
+            </button>
+            <button onclick="addClass()" class="icon">
+                <i class="fa-solid fa-hashtag"></i>
+            </button>
+            <button onclick="hideShow()" class="icon">
+                <i class="fa-regular fa-eye-slash"></i>
+            </button>
+            <button onclick="changeColor()" class="icon">
+                <i class="fa-solid fa-barcode"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- contenitore grande che conterrà i contenitori degli articoli -->
+    <div class="container">
+        <!-- contenitori per gli articoli -->
+        <div class="article-container">
+            <!-- Immagine articolo -->
+            <div class="article-img">
+                <a class="alink"
+                    href="https://www.amazon.it/gp/product/B0BBJ59WJ4/ref=ox_sc_saved_title_6?smid=A11IL2PNWYJU7H&psc=1">
+                    <img class="article-icon" src="assets/img/processore.jpeg" alt="processore ryzen 7900x">
+            </div>
+            </a>
+
+            <!-- Titolo dell'articolo -->
+            <div class="article-title">
+                <a class="alink"
+                    href="https://www.amazon.it/gp/product/B0BBJ59WJ4/ref=ox_sc_saved_title_6?smid=A11IL2PNWYJU7H&psc=1">
+                    <h3>Ryzen 9 7900X</h3>
+                </a>
+
+            </div>
+
+            <!-- Descrizione dell'articolo -->
+            <div class="article-description">
+                <a class="alink"
+                    href="https://www.amazon.it/gp/product/B0BBJ59WJ4/ref=ox_sc_saved_title_6?smid=A11IL2PNWYJU7H&psc=1">
+                    <p>Amd Ryzen 9 7900X - Processore, 12 Core/24 Thread Sfrenati, Architettura Zen 4, 76 Mb L3 Cache,
+                        170 W Tdp, Nero</p>
+                </a>
+
+            </div>
+
+            <!-- Prezzo dell'articolo -->
+            <div class="article-price">
+                <p>359,90 €</p>
+            </div>
+
+        </div>
+        <div class="article-container">
+            <!-- Immagine articolo -->
+            <div class="article-img">
+                <a class="alink"
+                    href="https://www.amazon.it/Elgato-HD60-Streaming-Registrazione-1080p60/dp/B09V1KJ3J4/?_encoding=UTF8&pd_rd_w=YTY9Y&content-id=amzn1.sym.413fd914-2e7b-4b35-a254-88a121a5f45c%3Aamzn1.symc.afd86303-4a72-4e34-8f6b-19828329e602&pf_rd_p=413fd914-2e7b-4b35-a254-88a121a5f45c&pf_rd_r=ZQ7D5MH81AGNJ51HC71H&pd_rd_wg=O33Pu&pd_rd_r=8815d2d6-b2a6-4acd-a1bd-0885e3360c56&ref_=pd_gw_ci_mcx_mr_hp_atf_m">
+                    <img class="article-icon" src="assets/img/Elgato.jpeg" alt="elgato scheda acquisizione">
+            </div>
+            </a>
+
+            <!-- Titolo dell'articolo -->
+            <div class="article-title">
+                <a class="alink"
+                    href="https://www.amazon.it/Elgato-HD60-Streaming-Registrazione-1080p60/dp/B09V1KJ3J4/?_encoding=UTF8&pd_rd_w=YTY9Y&content-id=amzn1.sym.413fd914-2e7b-4b35-a254-88a121a5f45c%3Aamzn1.symc.afd86303-4a72-4e34-8f6b-19828329e602&pf_rd_p=413fd914-2e7b-4b35-a254-88a121a5f45c&pf_rd_r=ZQ7D5MH81AGNJ51HC71H&pd_rd_wg=O33Pu&pd_rd_r=8815d2d6-b2a6-4acd-a1bd-0885e3360c56&ref_=pd_gw_ci_mcx_mr_hp_atf_m">
+                    <h3>Elgato</h3>
+                </a>
+
+            </div>
+
+            <!-- Descrizione dell'articolo -->
+            <div class="article-description">
+                <a class="alink"
+                    href="https://www.amazon.it/Elgato-HD60-Streaming-Registrazione-1080p60/dp/B09V1KJ3J4/?_encoding=UTF8&pd_rd_w=YTY9Y&content-id=amzn1.sym.413fd914-2e7b-4b35-a254-88a121a5f45c%3Aamzn1.symc.afd86303-4a72-4e34-8f6b-19828329e602&pf_rd_p=413fd914-2e7b-4b35-a254-88a121a5f45c&pf_rd_r=ZQ7D5MH81AGNJ51HC71H&pd_rd_wg=O33Pu&pd_rd_r=8815d2d6-b2a6-4acd-a1bd-0885e3360c56&ref_=pd_gw_ci_mcx_mr_hp_atf_m">
+                    <p>Elgato HD60 X - Streaming e Registrazione in 1080p60 HDR10 o 4K30 con latenza Molto Bassa su PS5,
+                        PS4/Pro, Xbox Serie X/S, Xbox One X/S, in OBS, Adatto per PC/Mac, usb3.0, Windows 10 (64-bit)
+                    </p>
+                </a>
+
+            </div>
+
+            <!-- Prezzo dell'articolo -->
+            <div class="article-price">
+                <p>149,90 €</p>
+            </div>
+
+        </div>
+        <div class="article-container">
+            <!-- Immagine articolo -->
+            <div class="article-img">
+                <a class="alink"
+                    href="https://www.amazon.it/Samsung-Odyssey-Monitor-Gaming-5120x1440/dp/B0BRLBX2J9/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&crid=36WRRQ15B5Y3J&dib=eyJ2IjoiMSJ9._oMMcznTjcq9n_kCbV3eDRrz2xoePJ1cjPim0ZXYiHAKNp4U7vJ81obURRrbMVv0VuHfKwaQscuJIngxl-QgdXewkHBYN3oYIsyWliGExxHJuROszYxYIx1qAs3SkJlZAHyYU_9Zii4yKRQd5OWCkSYEhp-hgr82Jyxw7rxIetcN1EmAiIcr-CiONxVZGh8BgJ4FXXbgy5jx-NkaXLtYsH343Ax7QCeZ22TjFlFbtEaRgtBQ7bU38EvUM9In8lIW3U8_2EWBPsC1EnKYkTDeNOhcE8cH6IOAvLV1D-op5XQ.LXK-NT3SBsu59zPKV3qTqP2kaf2YaOyi9PHHNbcbCqY&dib_tag=se&keywords=samsung+ultrawide&qid=1708858855&s=pc&sprefix=samsung+ultrawid%2Ccomputers%2C157&sr=1-1-spons&ufe=app_do%3Aamzn1.fos.9d4f9b77-768c-4a4e-94ad-33674c20ab35&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+                    <img class="article-icon" src="assets/img/samsung.jpeg" alt="monitor samsung g9">
+            </div>
+            </a>
+
+            <!-- Titolo dell'articolo -->
+            <div class="article-title">
+                <a class="alink"
+                    href="https://www.amazon.it/Samsung-Odyssey-Monitor-Gaming-5120x1440/dp/B0BRLBX2J9/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&crid=36WRRQ15B5Y3J&dib=eyJ2IjoiMSJ9._oMMcznTjcq9n_kCbV3eDRrz2xoePJ1cjPim0ZXYiHAKNp4U7vJ81obURRrbMVv0VuHfKwaQscuJIngxl-QgdXewkHBYN3oYIsyWliGExxHJuROszYxYIx1qAs3SkJlZAHyYU_9Zii4yKRQd5OWCkSYEhp-hgr82Jyxw7rxIetcN1EmAiIcr-CiONxVZGh8BgJ4FXXbgy5jx-NkaXLtYsH343Ax7QCeZ22TjFlFbtEaRgtBQ7bU38EvUM9In8lIW3U8_2EWBPsC1EnKYkTDeNOhcE8cH6IOAvLV1D-op5XQ.LXK-NT3SBsu59zPKV3qTqP2kaf2YaOyi9PHHNbcbCqY&dib_tag=se&keywords=samsung+ultrawide&qid=1708858855&s=pc&sprefix=samsung+ultrawid%2Ccomputers%2C157&sr=1-1-spons&ufe=app_do%3Aamzn1.fos.9d4f9b77-768c-4a4e-94ad-33674c20ab35&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+                    <h3>Odyssey G9 </h3>
+                </a>
+
+            </div>
+
+            <!-- Descrizione dell'articolo -->
+            <div class="article-description">
+                <a class="alink"
+                    href="https://www.amazon.it/Samsung-Odyssey-Monitor-Gaming-5120x1440/dp/B0BRLBX2J9/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&crid=36WRRQ15B5Y3J&dib=eyJ2IjoiMSJ9._oMMcznTjcq9n_kCbV3eDRrz2xoePJ1cjPim0ZXYiHAKNp4U7vJ81obURRrbMVv0VuHfKwaQscuJIngxl-QgdXewkHBYN3oYIsyWliGExxHJuROszYxYIx1qAs3SkJlZAHyYU_9Zii4yKRQd5OWCkSYEhp-hgr82Jyxw7rxIetcN1EmAiIcr-CiONxVZGh8BgJ4FXXbgy5jx-NkaXLtYsH343Ax7QCeZ22TjFlFbtEaRgtBQ7bU38EvUM9In8lIW3U8_2EWBPsC1EnKYkTDeNOhcE8cH6IOAvLV1D-op5XQ.LXK-NT3SBsu59zPKV3qTqP2kaf2YaOyi9PHHNbcbCqY&dib_tag=se&keywords=samsung+ultrawide&qid=1708858855&s=pc&sprefix=samsung+ultrawid%2Ccomputers%2C157&sr=1-1-spons&ufe=app_do%3Aamzn1.fos.9d4f9b77-768c-4a4e-94ad-33674c20ab35&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+                    <p>Samsung Monitor Gaming Odyssey G9 (C49G93), Curvo (1000R), 49", 5120x1440 (Dual QHD), 32:9,
+                        HDR10+, HDR1000, VA, 240 Hz, 1 ms, Freesync Pro, G-Sync, HDMI, USB 3.0, Display Port, Ingresso
+                        Audio, HAS
+                    </p>
+                </a>
+
+            </div>
+
+            <!-- Prezzo dell'articolo -->
+            <div class="article-price">
+                <p>1109,90 €</p>
+            </div>
+
+        </div>
+        <div class="article-container">
+            <!-- Immagine articolo -->
+            <div class="article-img">
+                <a class="alink"
+                    href="https://www.amazon.it/gp/product/B0BBJ59WJ4/ref=ox_sc_saved_title_6?smid=A11IL2PNWYJU7H&psc=1">
+                    <img class="article-icon" src="assets/img/balckshark.jpeg" alt="processore ryzen 7900x">
+            </div>
+            </a>
+
+            <!-- Titolo dell'articolo -->
+            <div class="article-title">
+                <a class="alink"
+                    href="https://www.amazon.it/gp/product/B0BBJ59WJ4/ref=ox_sc_saved_title_6?smid=A11IL2PNWYJU7H&psc=1">
+                    <h3>Razer BlackShark V2 Pro</h3>
+                </a>
+
+            </div>
+
+            <!-- Descrizione dell'articolo -->
+            <div class="article-description">
+                <a class="alink"
+                    href="https://www.amazon.it/gp/product/B0BBJ59WJ4/ref=ox_sc_saved_title_6?smid=A11IL2PNWYJU7H&psc=1">
+                    <p>Razer BlackShark V2 Pro, Cuffie da gioco Esports Premium senza fili, Cuffie Wireless con Driver
+                        da 50 mm, Microfono Supercardioide HyperClear, Tecnologia HyperSpeed Wireless, Nero
+                    </p>
+                </a>
+
+            </div>
+
+            <!-- Prezzo dell'articolo -->
+            <div class="article-price">
+                <p>164,90 €</p>
+            </div>
+
+        </div>
+        <div class="article-container">
+            <!-- Immagine articolo -->
+            <div class="article-img">
+                <a class="alink"
+                    href="https://www.amazon.it/Volante-Corsa-Logitech-Driving-Force/dp/B00YUIM2J0/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&dib=eyJ2IjoiMSJ9.o12zt-XDzI4J5KZ_uq86w9mobdoeQCfiFGhv2Sa2KN5zgLc4IjUbkYrm2749g--HY-IOeA_aTXN5VHG_GFMaHyuNmdcqWWj8xo6NkwUTloetyUypwqj5ZrF5SgXRmFcXoVcp37CSPdyWMY_bBxLgBXkL5SrSJtPg1-c4Lh0H2rpKPESawDFcV19URv8HtyZ_9KT4K15SLte6H0S5fJj20zo6KTSZJ5gqPrn_3nSCPEM.diUHTQ9yqC8T7q8XgLGj6SYc54GXIGDQcMF-cVqU-bM&dib_tag=se&keywords=ps5&qid=1708859835&s=videogames&sr=1-1&ufe=app_do%3Aamzn1.fos.9d4f9b77-768c-4a4e-94ad-33674c20ab35">
+                    <img class="article-icon" src="assets/img/g29.jpeg" alt="processore ryzen 7900x">
+            </div>
+            </a>
+
+            <!-- Titolo dell'articolo -->
+            <div class="article-title">
+                <a class="alink"
+                    href="https://www.amazon.it/Volante-Corsa-Logitech-Driving-Force/dp/B00YUIM2J0/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&dib=eyJ2IjoiMSJ9.o12zt-XDzI4J5KZ_uq86w9mobdoeQCfiFGhv2Sa2KN5zgLc4IjUbkYrm2749g--HY-IOeA_aTXN5VHG_GFMaHyuNmdcqWWj8xo6NkwUTloetyUypwqj5ZrF5SgXRmFcXoVcp37CSPdyWMY_bBxLgBXkL5SrSJtPg1-c4Lh0H2rpKPESawDFcV19URv8HtyZ_9KT4K15SLte6H0S5fJj20zo6KTSZJ5gqPrn_3nSCPEM.diUHTQ9yqC8T7q8XgLGj6SYc54GXIGDQcMF-cVqU-bM&dib_tag=se&keywords=ps5&qid=1708859835&s=videogames&sr=1-1&ufe=app_do%3Aamzn1.fos.9d4f9b77-768c-4a4e-94ad-33674c20ab35">
+                    <h3>Logitech G29</h3>
+                </a>
+
+            </div>
+
+            <!-- Descrizione dell'articolo -->
+            <div class="article-description">
+                <a class="alink"
+                    href="https://www.amazon.it/Volante-Corsa-Logitech-Driving-Force/dp/B00YUIM2J0/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&dib=eyJ2IjoiMSJ9.o12zt-XDzI4J5KZ_uq86w9mobdoeQCfiFGhv2Sa2KN5zgLc4IjUbkYrm2749g--HY-IOeA_aTXN5VHG_GFMaHyuNmdcqWWj8xo6NkwUTloetyUypwqj5ZrF5SgXRmFcXoVcp37CSPdyWMY_bBxLgBXkL5SrSJtPg1-c4Lh0H2rpKPESawDFcV19URv8HtyZ_9KT4K15SLte6H0S5fJj20zo6KTSZJ5gqPrn_3nSCPEM.diUHTQ9yqC8T7q8XgLGj6SYc54GXIGDQcMF-cVqU-bM&dib_tag=se&keywords=ps5&qid=1708859835&s=videogames&sr=1-1&ufe=app_do%3Aamzn1.fos.9d4f9b77-768c-4a4e-94ad-33674c20ab35">
+                    <p>Logitech G29 Driving Force Volante da Corsa con Pedali Regolabili, Ritorno di Forza Reale,
+                        Comandi Cambio in Acciaio Inossidabile, Volante in Pelle, Spina EU, Per PS5, PS4, PS3, PC, Nero
+                    </p>
+                </a>
+
+            </div>
+
+            <!-- Prezzo dell'articolo -->
+            <div class="article-price">
+                <p>249,90 €</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Sezione per lasciare un commento -->
+    <div class="commenti">
+        <div class="contenitore-commenti">
+            <div class="lascia-un-commento">
+                <h2>Lascia un commento</h2>
+            </div>
+
+            <!-- input text per lasciare un commento -->
+            <div class="box-text">
+                <textarea name="Lascia un commento" id="commento" cols="80" rows="20"></textarea>
+                <!-- <input name="commento" type="text" value="Lascia un commento" size="40" maxlength="200"> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer con nome e indirizzo del mio negozio -->
+    <footer class="footer">
+
+        <!-- Div con il nome del negozio -->
+        <div class="shop-name">
+            <p>E-Commerce</p>
+        </div>
+
+        <!-- Div con l'indirizzo -->
+        <div class="shop-address">
+            <p id="address">Via Ravanusa, 48/B Tremestieri Etneo (CT) Italia</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/deaa9508d4.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
